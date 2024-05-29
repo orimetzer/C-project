@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *sort_arr(int *elements, int size){
+    /*we'll use coppyarray func to first create a new copy of our array*/
+    int *SortedArrey = copyarray(elements, size);
+    int i,j;
+    int *pointer1, *pointer2;
+    int temp;
+    /*in the internal iteration we'll compare every 2 elements and switch whenever needed. we'll use the
+      outer loop to repeat that every time with a shorter array*/
+    for (i=0;i<size-1;i++){
+        for (j = 0;j<size-i-1;j++)
+            if (SortedArrey[j]>SortedArrey[j+1]){
+                pointer1 = &SortedArrey[j];
+                pointer2 = &SortedArrey[j + 1];
+                temp = *pointer1;
+                *pointer1 = *pointer2;
+                *pointer2 = temp;}
+
+    }
+    return SortedArrey;
+}

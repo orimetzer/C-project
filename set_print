@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void set_print(int *elements, int size){
+    /*we'll use coppyarray func to first create a new copy of our array*/
+    int *array = copyarray(elements,size);
+    int i;
+    /*we'll use the loop to print the array by the given format*/
+    printf("[ ");
+    for (i=0;i<size;i++) {
+        if (i == size - 1) { /*if we got to the last element*/
+            printf("%d ]", array[i]);
+        } else {
+            printf("%d, ", array[i]);
+        }}
+    }

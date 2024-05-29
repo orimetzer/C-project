@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int size_array = 6;
+    int elements[] = {6, -10, 4, 3, 4,2};
+    int *newArray = copyarray(elements, size_array);
+    int j;
+    int res_q3;
+    res_q3 = search(elements, size_array, 2);
+    printf("%d\n", res_q3);
+    int *SortedArray = sort_arr(elements, size_array);
+    for (int j =0; j < size_array; j++) {
+        printf("%d ", newArray[j]);}
+    printf("\n");
+    set_print(elements, size_array);
+    printf("\n");
+    for (int j = 0; j < size_array; j++) {
+        printf("%d ", SortedArray[j]);
+    }
+    free(newArray);
+    free(SortedArray);
+    return 0;
+    }

@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int search(int arr[], int size, int x){
+    int i;
+    int *ptr;
+    ptr = arr;
+    for (i = 0; i<size;i++){
+        /* if the value which ptr points at is x return its index and finish, else bring ptr to the next index */
+        if(*ptr == x){
+            return i;}
+        else {
+            ptr++;
+        }}
+    /* if we passed on all of arr's values and haven't got inside the if statement then x is not in arr*/
+    return -1;
+
+}
