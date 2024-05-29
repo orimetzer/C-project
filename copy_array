@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int *copyarray(int *elements, int size){
+
+    int *newArray= malloc(size*sizeof(int));
+    /*newArray is a pointer to the coppied array we are going to create in the upcoming loop*/
+    int i;
+    /*in each iteration the current value of elements is coppied to the current index in newArray*/
+    for(i=0;i<size;i++){
+        *(newArray+i) = *(elements+i);
+
+    }
+    return newArray;
+    /*in this func and whenever we used malloc inside a function we did'nt "free" the memory inside the
+     function in order not to lose this memory until we get the return value. "free" should be done in the main*/
+}
